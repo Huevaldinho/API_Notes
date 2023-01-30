@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon ./src/server.js",
+    "dev": "nodemon  src/server.js --exec babel-node"
+    
   },
   "dependencies": {
     "dotenv": "^16.0.3",
@@ -8,5 +10,11 @@
     "express-session": "^1.17.3",
     "mssql": "^9.1.1",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2"
   }
 }
