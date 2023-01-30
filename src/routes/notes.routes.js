@@ -9,9 +9,9 @@ import {
 } from "../controllers/notes.controller";
 
 // Rutas de las notas
-router.get("/notes", getNotes);
-router.post("/notes", postNotes);
-router.delete("/notes", deleteNotes);
-router.put("/notes", putNotes);
+router.get("/notes/:idUserOwner", getNotes);
+router.post("/notes/:idUserOwner/:nota", postNotes);
+router.delete("/notes/:idNota", deleteNotes);
+router.put("/notes/:id/:newNote", putNotes);
 
 export default router;
