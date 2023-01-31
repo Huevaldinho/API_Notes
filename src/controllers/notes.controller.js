@@ -2,7 +2,7 @@ import {
   getNotesProcedure,
   deleteNoteProcedure,
   createNotesProcedure,
-  putNoteProcedure
+  putNoteProcedure,
 } from "../database/procedimientos";
 
 //Middlewheres de las rutas de las notas.
@@ -67,14 +67,22 @@ export const deleteNotes = async (req, res) => {
     res.status(500).json(error);
   }
 };
-export const putNotes =async (req, res) => {
+
+/*
+  Middlewhere para manejar el put request de las notas.
+  Params:
+  *   id int: Id de la nota a actualizar.
+  *   newNote string: Nueva nota a actualizar.
+  Retorna:  
+  *   [{"idNoteUpdated": value}]: Si logra actualizar la nota.
+  *   [{"noteNotFound": -1}]: Si no existe nota con el id ingresado.
+ */
+export const putNotes = async (req, res) => {
   console.log("Put notas middlewhere");
   try {
     await res
       .status(200)
-      .json(
-        await putNoteProcedure(req.params.id, req.params.newNote)
-      );
+      .json(await putNoteProcedure(req.params.id, req.params.newNote));
   } catch (error) {
     res.status(500).json(error);
   }
