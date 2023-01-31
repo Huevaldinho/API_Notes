@@ -3,7 +3,7 @@ import {
   deleteNoteProcedure,
   createNotesProcedure,
   putNoteProcedure,
-} from "../database/procedimientos";
+} from "../database/notes.procedures";
 
 //Middlewheres de las rutas de las notas.
 
